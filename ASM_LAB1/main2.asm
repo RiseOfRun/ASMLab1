@@ -206,15 +206,16 @@ cmp sign,0
 je toPrint
 push '-'
 inc cx
-mov lens, Ecx
+
 xor EBX,EBX
 
 toPrint:
-	
+	mov lens, Ecx
+Build:
 	pop ebx
 	mov [esi], bx
 	inc esi
-LOOP toPrint
+LOOP Build
 RET
 PrintResult ENDP
 END MAIN
